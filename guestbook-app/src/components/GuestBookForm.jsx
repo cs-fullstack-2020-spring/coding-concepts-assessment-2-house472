@@ -53,7 +53,7 @@ class GuestBookForm extends Component {
                             <option value="">Did Not RSVP</option>
                         </select>
 
-                        <button onClick={this.handleSubmission}>Select</button>
+                        <button onClick={this.handleSubmission}>Submit</button>
 
 
                     </fieldset>
