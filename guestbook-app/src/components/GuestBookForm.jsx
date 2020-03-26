@@ -8,6 +8,7 @@ class GuestBookForm extends Component {
             guestRsvpStatus: ""
         }
     }
+    //WIRE BUTTON
     handleSubmission = (event) => {
         event.preventDefault();
         this.props.addGuest(this.state)
@@ -20,14 +21,14 @@ class GuestBookForm extends Component {
 
 
 
-
+//WIRE ONCHANGE
     handleChange = (event) => {
         if (event.target.name == "guestName") {
             this.setState({ guestName: event.target.value })
         } else if (event.target.name == "guestPhoneNumber") {
             this.setState({ guestPhoneNumber: event.target.value })
-        } else if (event.target.name == "guestRsvpStatus") {
-            this.setState({ guestRsvpStatus: event.target.value })
+        } else if (event.target.name=="guestRsvpStatus"){
+            this.setState({guestRsvpStatus : event.target.value})
         }
 
     }
@@ -35,7 +36,7 @@ class GuestBookForm extends Component {
     render() {
         return (
             <div>
-                <form action="">
+                <form action="" id= "form">
                     <fieldset>
                         <legend>Guest List</legend>
 
@@ -45,12 +46,12 @@ class GuestBookForm extends Component {
                         <label htmlFor="">Guest Phone Number</label>
                         <input type="tel" name="guestPhoneNumber" id="guestPhoneNumber" onChange={this.handleChange} value={this.state.guestPhoneNumber} />
 
-                        
+                        {/* TOFIX UNABLE TO GET FORM TO TOGGLE BETWEEN RSVP AND NORSVP */}
                         <label htmlFor="">Guest RSVP Status</label>
-                        <select name="guestRsvpStatus" id="guestRsvpStatus" onChange={this.hanldeChange} value={this.state.guestRsvpStatus}>
+                        <select name="guestRsvpStatus" id="guestRsvpStatus" onChange={this.handleChange} value={this.state.guestRsvpStatus}>
                             <option value="">---</option>
                             <option value="">Did RSVP</option>
-                            <option value="">Did Not RSVP</option>
+                            <option value="false">Did Not RSVP</option>
                         </select>
 
                         <button onClick={this.handleSubmission}>Submit</button>

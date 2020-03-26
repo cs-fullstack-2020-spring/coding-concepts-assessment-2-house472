@@ -34,20 +34,20 @@ nonRsvp = () =>{
     this.setState({nonRsvp: true})
 }
     render() {
-        // let guestRsvp;
-        // if (this.state.rsvp){
-        //     guestRsvp=  
-        // } else if (this.state.nonRsvp){
-        //     guestRsvp =
-        // }
+        
+       
         return (
             <div id = "AppContainer">
 
-                <h1>Guest List Manager</h1>
+                <h1 id = "header">Guest List Manager</h1>
 
-                <GuestBookForm addGuest ={this.addGuest}/>
+{/* TOFIX HANDLE TOGGLE CHANGE FOR RSVP */}
+                <GuestBookForm  addGuest ={this.addGuest} doNotaddGuest = {this.doNotaddGuest}  />
+               
+                <GuestBookListRsvp addGuest ={this.state.guestBookListRsvp}    />
                 <GuestBookList doNotaddGuest ={this.state.guestBookListArray} />
-                <GuestBookListRsvp addGuest ={this.state.guestBookListRsvp}/>
+                
+                
                 
                 
                 

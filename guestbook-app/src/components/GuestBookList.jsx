@@ -6,14 +6,14 @@ class GuestBookList extends Component {
     }
     render() {
         return (
-            <div>
+            <div id= "list">
                 <header>Waiting For Response</header>
                 <h1>This Guest has not RSVP'd</h1>
 
                 {
                     this.props.doNotaddGuest.map((rsvp, index) =>  {
                         return(
-                            <div>
+                            <div key = {index}>
                                <p>Guest Name: {rsvp.guestName} </p>
                                 <p>Guest Phone: {rsvp.guestPhoneNumber} </p>
                                 <p>Guest RSVP: {rsvp.guestrsvpStatus} </p>

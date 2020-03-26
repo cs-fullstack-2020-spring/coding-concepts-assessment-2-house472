@@ -6,7 +6,7 @@ class GuestBookListRsvp extends Component {
     }
     render() {
         return (
-            <div>
+            <div id ="rsvp">
                 
                 <h1>This Guest has RSVP'd</h1>
                 {
